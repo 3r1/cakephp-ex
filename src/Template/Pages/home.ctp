@@ -191,8 +191,6 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
         <h3 class="more">Page view count:</h3>
         <p>
            <?php
-                use Cake\Datasource\ConnectionManager;
-
                 $hasDB=1;
                 $tableExisted=0;
                 try {
