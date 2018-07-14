@@ -27,7 +27,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
-$cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
+$cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +49,7 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
 <header class="row">
     <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
     <div class="header-title">
-        <h1>Welcome to 3r1-api on CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
+        <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
     </div>
 </header>
 
@@ -188,38 +188,10 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
 
 <div class="row">
     <div class="columns large-12 text-center">
-        <h3 class="more">Page view count:</h3>
+        <h3 class="more">More about Cake</h3>
         <p>
-           <?php
-                use Cake\Datasource\ConnectionManager;
-
-                $hasDB=1;
-                $tableExisted=0;
-                try {
-                  $connection = ConnectionManager::get('default');
-                } catch(Exception $e) {
-                  $hasDB=0;
-                }
-                if ($hasDB) {
-                    try {
-                      $connection->execute('create table view_counter (c integer)');
-                    } catch (Exception $e) {
-                        $tableExisted=1;
-                    }
-                    try {
-                        if ($tableExisted==0) {
-                            $connection->execute('insert into view_counter values(1)');
-                        } else {
-                            $connection->execute('update view_counter set c=c+1');
-                        }
-                        $result=$connection->execute('select * from view_counter')->fetch('assoc');;
-                    } catch (Exception $e) {
-                        $hasDB=0;
-                    }
-                }
-            ?>
-            <?php if ($hasDB==1) : ?>
-               <span class="code" id="count-value"><?php print_r($result['c']); ?></span>
+            CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Front Controller and MVC.<br />
+            Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
         </p>
     </div>
     <hr/>
@@ -227,8 +199,8 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
 
 <div class="row">
     <div class="columns large-4">
-        <i class="icon support">A</i>
-        <h3>Help and Such</h3>
+        <i class="icon support">P</i>
+        <h3>Help and Bug Reports</h3>
         <ul>
             <li class="bullet cutlery">
                 <a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
@@ -249,8 +221,8 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
         </ul>
     </div>
     <div class="columns large-4">
-        <i class="icon docs">B</i>
-        <h3>Docs and Such</h3>
+        <i class="icon docs">r</i>
+        <h3>Docs and Downloads</h3>
         <ul>
             <li class="bullet cutlery">
                 <a href="https://api.cakephp.org/3.0/">CakePHP API</a>
@@ -283,8 +255,8 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
         </ul>
     </div>
     <div class="columns large-4">
-        <i class="icon training">C</i>
-        <h3>Training and Such</h3>
+        <i class="icon training">s</i>
+        <h3>Training and Certification</h3>
         <ul>
             <li class="bullet cutlery">
                 <a href="https://cakefoundation.org/">Cake Software Foundation</a>
