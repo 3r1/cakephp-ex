@@ -220,6 +220,9 @@ $cakeDescription = '3r1-api on CakePHP: the rapid development PHP framework';
             ?>
             <?php if ($hasDB==1) : ?>
                <span class="code" id="count-value"><?php print_r($result['c']); ?></span>
+            <?php else : ?>
+                <span class="code" id="count-value">No database configured</span>
+           <?php endif; ?>
         </p>
     </div>
     <hr/>
